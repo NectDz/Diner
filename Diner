@@ -1,0 +1,409 @@
+import time
+
+# break counter
+counter = 1
+def stop():
+  while True:
+    for i in range(counter):
+      break
+
+# Main
+def main():
+  while True:
+    global counter
+    counter += 1
+    intro()
+    time.sleep(.5)
+    user_in = input("'s' To sit a party\n'd' Dismiss a party\n'v' view avaliable seats\n'q' Quit the program\n----------------------\nEnter here: ")
+    user_in = user_in.upper()
+    if user_in == 'S':
+      sit()
+    elif user_in == 'D':
+      dismiss()
+    elif user_in == 'V':
+      view()
+    elif user_in == 'Q':
+      time.sleep(1)
+      print("----------------------")
+      print("See you next time!")
+      stop()
+    else : 
+      time.sleep(1)
+      print("----------------------")
+      print("That is not one of the options...")
+      print("----------------------\n""")
+
+# D Control
+def dismiss():
+  # D Control
+  while True:
+    # Global Variables
+    global seat_A
+    global Table_A
+    global Table_B
+    global seat_B
+    global Table_C
+    global seat_C
+    global counter
+    counter += 1
+    time.sleep(.1)
+    print("----------------------")
+    #Table A
+    print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+    print("")
+    #Table B
+    time.sleep(.1)
+    print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+    print("")
+    #Table C
+    time.sleep(.1)
+    print("Table - C has " + str(Table_C) + " people in it! (Remaining seats: " + str(seat_C) + ")")
+    print("----------------------")
+    time.sleep(1)
+    # Table Input
+    Table = input("Which Table would you like? ")
+    Table = Table.upper()
+    print("----------------------")
+    # Table A
+    if Table == 'A':
+      seats = input("How many people are going to remove? (Max 4) ")
+      if seats == '1':
+        Table_A -= 1
+        seat_A +=1
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      elif seats == '2':
+        Table_A -= 2
+        seat_A +=2
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      elif seats == '3':
+        Table_A -= 3
+        seat_A +=3
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      elif seats == '4':
+        Table_A -= 4
+        seat_A +=4
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      else : 
+        time.sleep(1)
+        print("----------------------")
+        print("This table has no more!")
+        quit()
+    # Table B
+    elif Table == 'B':
+      seats = input("How many people are going to remove? (Max 6) ")
+      if seats == '1':
+        Table_B -= 1
+        seat_B +=1
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '2':
+        Table_B -= 2
+        seat_B +=2
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '3':
+        Table_B -= 3
+        seat_B +=3
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '4':
+        Table_B -= 4
+        seat_B +=4
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '5':
+        Table_B -= 5
+        seat_B +=5
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '6':
+        Table_B -= 6
+        seat_B +=6
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      else : 
+        time.sleep(1)
+        print("----------------------")
+        print("This table has no more!")
+        quit()
+      # Table C
+    elif Table == 'C':
+      seats = input("How many people are going to remove? (Max 2) ")
+      if seats == '1':
+        Table_C -= 1
+        seat_C +=1
+        time.sleep(1)
+        print("----------------------")
+        print("Table - C has " + str(Table_C) + " people in it! (Remaining seats: " + str(seat_C) + ")")
+        print("----------------------")
+      elif seats == '2':
+        Table_C -= 2
+        seat_C +=2
+        time.sleep(1)
+        print("----------------------")
+        print("Table - C has " + str(Table_C) + " people in it! (Remaining seats: " + str(seat_C) + ")")
+        print("----------------------")
+      else : 
+        time.sleep(1)
+        print("----------------------")
+        print("This table has no more!")
+        continue
+    else :
+      print("We do not have that table")
+      time.sleep(1)
+      print("----------------------")
+      quit()
+    quit()
+
+# V Control
+def view():
+  while True:
+    global counter
+    global seat_A
+    global Table_A
+    global Table_B
+    global seat_B
+    global Table_C
+    global seat_C
+    counter += 1
+    time.sleep(1)
+    print("----------------------")
+    print("Showing Tables")
+    print("----------------------")
+    time.sleep(1)
+    #Table A
+    print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+    print("")
+    #Table B
+    time.sleep(.1)
+    print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+    print("")
+    #Table C
+    time.sleep(.1)
+    print("Table - C has " + str(Table_C) + " people in it! (Remaining seats: " + str(seat_C) + ")")
+    print("----------------------")
+    time.sleep(1)
+    quit = input("Type 'B' to go back\nEnter here: ")
+    quit = quit.upper()
+    if quit == 'B':
+      time.sleep(1)
+      print("----------------------")
+      print("Taking you back!")
+      print("----------------------")
+      print("")
+      time.sleep(1)
+      main()
+
+# S Control
+def sit():
+  # S Control
+  while True:
+    # Global Variables
+    global counter
+    global seat_A
+    global Table_A
+    global Table_B
+    global seat_B
+    global Table_C
+    global seat_C
+    time.sleep(.1)
+    counter += 1
+    print("----------------------")
+    #Table A
+    print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+    print("")
+    #Table B
+    time.sleep(.1)
+    print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+    print("")
+    #Table C
+    time.sleep(.1)
+    print("Table - C has " + str(Table_C) + " people in it! (Remaining seats: " + str(seat_C) + ")")
+    print("----------------------")
+    time.sleep(1)
+    # Table Input
+    Table = input("Which Table would you like? ")
+    Table = Table.upper()
+    print("----------------------")
+    # Table A
+    if Table == 'A':
+      seats = input("How many people are going to sit here? (Max 4) ")
+      if seats == '1':
+        Table_A += 1
+        seat_A -=1
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      elif seats == '2':
+        Table_A += 2
+        seat_A -=2
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      elif seats == '3':
+        Table_A += 3
+        seat_A -=3
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      elif seats == '4':
+        Table_A += 4
+        seat_A -=4
+        time.sleep(1)
+        print("----------------------")
+        print("Table - A has " + str(Table_A) + " people in it! (Remaining seats: " + str(seat_A) + ")")
+        print("----------------------")
+      else : 
+        time.sleep(1)
+        print("----------------------")
+        print("This table has no more!")
+        quit()
+    # Table B
+    elif Table == 'B':
+      seats = input("How many people are going to sit here? (Max 6) ")
+      if seats == '1':
+        Table_B += 1
+        seat_B -=1
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '2':
+        Table_B += 2
+        seat_B -=2
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '3':
+        Table_B += 3
+        seat_B -=3
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '4':
+        Table_B += 4
+        seat_B -=4
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '5':
+        Table_B += 4
+        seat_B -=4
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      elif seats == '6':
+        Table_B += 4
+        seat_B -=4
+        time.sleep(1)
+        print("----------------------")
+        print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
+        print("----------------------")
+      else : 
+        time.sleep(1)
+        print("----------------------")
+        print("This table has no more!")
+        quit()
+      # Table C
+    elif Table == 'C':
+      seats = input("How many people are going to sit here? (Max 2) ")
+      if seats == '1':
+        Table_C += 1
+        seat_C -=1
+        time.sleep(1)
+        print("----------------------")
+        print("Table - C has " + str(Table_C) + " people in it! (Remaining seats: " + str(seat_C) + ")")
+        print("----------------------")
+      elif seats == '2':
+        Table_C += 2
+        seat_C -=2
+        time.sleep(1)
+        print("----------------------")
+        print("Table - C has " + str(Table_C) + " people in it! (Remaining seats: " + str(seat_C) + ")")
+        print("----------------------")
+      else : 
+        time.sleep(1)
+        print("----------------------")
+        print("This table has no more!")
+        quit()
+    else :
+      print("We do not have that table")
+      time.sleep(1)
+      print("----------------------")
+      quit()
+    quit()
+        
+ def quit():
+  while True:
+    global counter
+    counter += 1
+    quit = input("Type 'B' to go back\nEnter here: ")
+    quit = quit.upper()
+    if quit == 'B':
+      time.sleep(1)
+      print("----------------------")
+      print("Taking you back!")
+      print("")
+      time.sleep(1)
+      main()
+
+# Intro
+def intro():
+  print("Welcome to Kevin's Diner Oraganizer!")
+  time.sleep(.1)
+  print("___ ___ _  _ ___ ___ ")
+  time.sleep(.1)
+  print("|   \_ _| \| | __| _ /")
+  time.sleep(.1)
+  print("| |) | || .` | _||   /")
+  time.sleep(.1)
+  print("|___/___|_|\_|___|_|_/")
+  time.sleep(.1)
+  print("-----------------------")
+  time.sleep(.1)
+
+
+# Tables
+
+Table_A = 0
+Table_B = 0
+Table_C = 0 
+
+# Seats remaining
+seat_A = 4 
+seat_B = 6
+seat_C = 2
+
+# Main
+main()
