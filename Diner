@@ -1,6 +1,6 @@
 import time
 
-# break counter
+# stop counter
 counter = 1
 def stop():
   while True:
@@ -26,6 +26,7 @@ def main():
       time.sleep(1)
       print("----------------------")
       print("See you next time!")
+      # Stop Counter
       stop()
     else : 
       time.sleep(1)
@@ -317,15 +318,15 @@ def sit():
         print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
         print("----------------------")
       elif seats == '5':
-        Table_B += 4
-        seat_B -=4
+        Table_B += 5
+        seat_B -=5
         time.sleep(1)
         print("----------------------")
         print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
         print("----------------------")
       elif seats == '6':
-        Table_B += 4
-        seat_B -=4
+        Table_B += 6
+        seat_B -=6
         time.sleep(1)
         print("----------------------")
         print("Table - B has " + str(Table_B) + " people in it! (Remaining seats: " + str(seat_B) + ")")
