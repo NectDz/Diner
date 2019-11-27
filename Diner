@@ -364,11 +364,11 @@ def sit():
       quit()
     quit()
         
- def quit():
+def quit():
   while True:
     global counter
     counter += 1
-    quit = input("Type 'B' to go back\nEnter here: ")
+    quit = input("Type 'B' to go back\nType 'C' to see the same option\nEnter here: ")
     quit = quit.upper()
     if quit == 'B':
       time.sleep(1)
@@ -377,7 +377,13 @@ def sit():
       print("")
       time.sleep(1)
       main()
-
+    elif quit == 'C':
+      break
+    else :
+      print("I did not understand, reshowing option...")
+      time.sleep(1)
+      continue
+      
 # Intro
 def intro():
   print("Welcome to Kevin's Diner Oraganizer!")
